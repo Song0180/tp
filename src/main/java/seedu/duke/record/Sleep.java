@@ -9,10 +9,6 @@ public class Sleep extends Record {
         super(type, date);
     }
 
-    public void Sleep(int duration, LocalDate date) {
-
-    }
-
     public int getDuration() {
         return duration;
     }

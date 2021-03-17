@@ -40,6 +40,7 @@ public class Exercise extends Record {
      */
     @Override
     public String getRecordSummary() {
-        return workout.getType() + ": " + workout.getCalories() + " for " + workout.getDuration() + " on " + workout.getDate();
+        return workout.getType() + ": " + workout.getCalories() + " for "
+                + workout.getDuration() + " on " + workout.getDate();
     }
 }

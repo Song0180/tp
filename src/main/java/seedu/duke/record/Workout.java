@@ -67,6 +67,10 @@ public class Workout extends Exercise {
      */
     private double calculateCalories() {
         //not sure how to calculate this, formulae online require bodyweight.
+        double bodyweight = 50.0;
+        double durationInHour = duration / 60;
+        int METValue = 12;
+        calories = bodyweight * METValue * durationInHour;
         return calories;
     }
 }

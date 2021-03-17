@@ -21,7 +21,9 @@ import static seedu.duke.command.CommandRecordType.DIET;
 import static seedu.duke.command.CommandRecordType.BODY_WEIGHT;
 import static seedu.duke.command.CommandRecordType.SLEEP;
 import static seedu.duke.command.CommandRecordType.INVALID;
-import static seedu.duke.command.CommandType.*;
+import static seedu.duke.command.CommandType.DELETE;
+import static seedu.duke.command.CommandType.ADD;
+import static seedu.duke.command.CommandType.VIEW;
 
 public class CommandParser {
     private final HashMap<String, String> params;
@@ -60,7 +62,7 @@ public class CommandParser {
             if (inputParts.length < 2) {
                 return new InvalidCommand(ADD);
             }
-            if(inputParts[1].length() < 3) {
+            if (inputParts[1].length() < 3) {
                 return new InvalidCommand(ADD);
             }
             CommandRecordType recordType = CommandRecordType.getType("" + inputParts[1].trim().charAt(2));
@@ -105,7 +107,7 @@ public class CommandParser {
             if (inputParts.length < 2) {
                 return new InvalidCommand(VIEW);
             }
-            if(inputParts[1].length() < 3) {
+            if (inputParts[1].length() < 3) {
                 return new InvalidCommand(VIEW);
             }
             CommandRecordType recordType = CommandRecordType.getType("" + inputParts[1].trim().charAt(2));
@@ -152,7 +154,7 @@ public class CommandParser {
             if (inputParts.length < 2) {
                 return new InvalidCommand(DELETE);
             }
-            if(inputParts[1].length() < 3) {
+            if (inputParts[1].length() < 3) {
                 return new InvalidCommand(DELETE);
             }
             CommandRecordType recordType = CommandRecordType.getType("" + inputParts[1].trim().charAt(2));

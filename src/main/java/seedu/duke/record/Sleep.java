@@ -26,9 +26,9 @@ public class Sleep extends Record {
     }
 
     /**
-     * Sets the duration of a sleep record.
+     * Sets the duration of the sleep record.
      *
-     * @param duration
+     * @param duration duration of the sleep record.
      */
     public void setDuration(int duration) {
         this.duration = duration;

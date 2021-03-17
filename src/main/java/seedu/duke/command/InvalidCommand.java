@@ -18,6 +18,9 @@ public class InvalidCommand extends Command {
         case VIEW:
             feedback = Messages.MESSAGE_INVALID_COMMAND_SYNTAX + Messages.MESSAGE_INVALID_VIEW_COMMAND;
             break;
+        case DELETE:
+            feedback = Messages.MESSAGE_INVALID_COMMAND_SYNTAX + Messages.MESSAGE_INVALID_DELETE_COMMAND;
+            break;
         default:
             feedback = Messages.MESSAGE_SYSTEM_ERROR;
         }

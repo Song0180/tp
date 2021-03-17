@@ -1,5 +1,6 @@
 package seedu.duke.ui;
 
+import seedu.duke.command.CommandResult;
 import seedu.duke.common.Messages;
 
 import java.util.Scanner;
@@ -41,6 +42,10 @@ public class UI {
                 + message
                 + "\n"
                 + DIVIDER_LINE_ONLY);
+    }
+
+    public void printCommandResult(CommandResult commandResult) {
+        System.out.println(commandResult.getFeedback());
     }
 
     public static void printDivider() {

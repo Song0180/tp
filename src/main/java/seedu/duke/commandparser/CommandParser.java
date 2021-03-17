@@ -21,8 +21,7 @@ import static seedu.duke.command.CommandRecordType.DIET;
 import static seedu.duke.command.CommandRecordType.BODY_WEIGHT;
 import static seedu.duke.command.CommandRecordType.SLEEP;
 import static seedu.duke.command.CommandRecordType.INVALID;
-import static seedu.duke.command.CommandType.ADD;
-import static seedu.duke.command.CommandType.VIEW;
+import static seedu.duke.command.CommandType.*;
 
 public class CommandParser {
     private final HashMap<String, String> params;
@@ -61,8 +60,10 @@ public class CommandParser {
             if (inputParts.length < 2) {
                 return new InvalidCommand(ADD);
             }
-
-            CommandRecordType recordType = CommandRecordType.getType(inputParts[1]);
+            if(inputParts[1].length() < 3) {
+                return new InvalidCommand(ADD);
+            }
+            CommandRecordType recordType = CommandRecordType.getType("" + inputParts[1].trim().charAt(2));
             if (recordType == INVALID) {
                 return new InvalidCommand(ADD);
             }
@@ -104,7 +105,10 @@ public class CommandParser {
             if (inputParts.length < 2) {
                 return new InvalidCommand(VIEW);
             }
-            CommandRecordType recordType = CommandRecordType.getType(inputParts[1]);
+            if(inputParts[1].length() < 3) {
+                return new InvalidCommand(VIEW);
+            }
+            CommandRecordType recordType = CommandRecordType.getType("" + inputParts[1].trim().charAt(2));
             if (recordType == INVALID) {
                 return new InvalidCommand(VIEW);
             }
@@ -146,20 +150,23 @@ public class CommandParser {
     private Command prepareDelete(String[] inputParts) {
         try {
             if (inputParts.length < 2) {
-                return new InvalidCommand("Invalid");
+                return new InvalidCommand(DELETE);
             }
-            CommandRecordType recordType = CommandRecordType.getType(inputParts[1]);
+            if(inputParts[1].length() < 3) {
+                return new InvalidCommand(DELETE);
+            }
+            CommandRecordType recordType = CommandRecordType.getType("" + inputParts[1].trim().charAt(2));
             if (recordType == INVALID) {
-                return new InvalidCommand("Invalid");
+                return new InvalidCommand(DELETE);
             }
             String[] typeIndex = inputParts[1].split("\\s+", 2);
             if (typeIndex.length < 2) {
-                return new InvalidCommand("Invalid");
+                return new InvalidCommand(DELETE);
             }
             String index = typeIndex[1];
             boolean isIndexValid = index.startsWith("i/") && index.length() >= 3;
             if (!isIndexValid) {
-                return new InvalidCommand("Invalid");
+                return new InvalidCommand(DELETE);
             }
             index = index.substring(2);
             params.put("index", index);

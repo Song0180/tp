@@ -33,4 +33,9 @@ public class Messages {
             + "2. View diet records\n\tview t/D [f/FOOD_NAME] [date/DD-MM-YYYY]\n"
             + "3. View sleep records\n\tview t/S [date/DD-MM-YYYY]\n"
             + "4. View body weight records\n\tview t/W [date/DD-MM-YYYY]";
+    public static final String MESSAGE_INVALID_DELETE_COMMAND = "The syntax for delete command is:\n"
+            + "1. Delete exercise records\n\tdelete t/E [a/ACTIVITY_NAME] [date/DD-MM-YYYY]\n"
+            + "2. Delete diet records\n\tdelete t/D i/index\n"
+            + "3. Delete sleep records\n\tdelete t/S i/index\n"
+            + "4. Delete body weight records\n\tdelete t/W i/index";
 }

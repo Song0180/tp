@@ -2,6 +2,7 @@ package seedu.duke.command;
 
 import seedu.duke.account.FitCenter;
 import seedu.duke.exception.TypeException;
+import seedu.duke.record.Diet;
 import seedu.duke.record.Record;
 
 import java.text.ParseException;
@@ -10,6 +11,8 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.HashMap;
+
+import static seedu.duke.command.CommandRecordType.DIET;
 
 public class AddCommand extends Command {
     private static final String FEEDBACK_FORMAT = "A new %s record is added successfully!\nRecord summary:%s";
@@ -32,22 +35,17 @@ public class AddCommand extends Command {
         switch (recordType) {
         case EXERCISE:
             //record = new DietRecord(recordType.EXERCISE, params.get("activity"), params.get("duration"), localDate);
-            recordType = CommandRecordType.EXERCISE;
             System.out.println(params.get("activity") + params.get("duration") + localDate.toString());
             break;
         case DIET:
-            //record = new DietRecord(recordType.DIET, params.get("food"), params.get("weight"), localDate);
-            recordType = CommandRecordType.DIET;
-            System.out.println(params.get("food") + params.get("weight") + localDate.toString());
+            record = new Diet(params.get("food"), params.get("weight"), localDate);
             break;
         case SLEEP:
             //record = new DietRecord(recordType.SLEEP, params.get("duration"), localDate);
-            recordType = CommandRecordType.SLEEP;
             System.out.println(params.get("duration") + localDate.toString());
             break;
         case BODY_WEIGHT:
             //record = new DietRecord(recordType.BODYWEIGHT, params.get("weight"), localDate);
-            recordType = CommandRecordType.BODY_WEIGHT;
             System.out.println(params.get("weight") + localDate.toString());
             break;
         default:

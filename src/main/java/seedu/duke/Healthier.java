@@ -25,7 +25,7 @@ public class Healthier {
             String userInput = ui.getUserInput();
             command = commandParser.parseCommand(userInput);
             CommandResult result = command.execute(currentFitCenter);
-            UI.printMessage(result.getFeedback());
+            ui.printCommandResult(result);
             commandParser.clearParserParams();
         } while (!ExitCommand.isExitCommand(command));
     }

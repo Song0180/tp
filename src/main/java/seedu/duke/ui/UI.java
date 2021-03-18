@@ -9,7 +9,7 @@ public class UI {
 
     public static final String DIVIDER = "----------------------------------------------------------------\n";
     public static final String DIVIDER_LINE_ONLY = "----------------------------------------------------------------";
-    private Scanner sc;
+    private final Scanner sc;
 
     public UI() {
         sc = new Scanner(System.in);
@@ -30,25 +30,11 @@ public class UI {
                 + Messages.MESSAGE_BYE
                 + DIVIDER);
     }
-
-    public void printHelpPrompt() {
-        System.out.print(DIVIDER
-                + Messages.MESSAGE_HELP
-                + DIVIDER_LINE_ONLY);
-    }
-
-    public static void printMessage(String message) {
+    
+    public void printCommandResult(CommandResult commandResult) {
         System.out.println(DIVIDER
-                + message
+                + commandResult.getFeedback()
                 + "\n"
                 + DIVIDER_LINE_ONLY);
-    }
-
-    public void printCommandResult(CommandResult commandResult) {
-        System.out.println(commandResult.getFeedback());
-    }
-
-    public static void printDivider() {
-        System.out.println(DIVIDER);
     }
 }

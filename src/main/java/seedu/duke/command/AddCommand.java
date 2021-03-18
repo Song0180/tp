@@ -19,7 +19,7 @@ public class AddCommand extends Command {
     private Record record;
     private CommandRecordType recordType;
 
-    public AddCommand(CommandRecordType recordType, HashMap<String,String> params)
+    public AddCommand(CommandRecordType recordType, HashMap<String, String> params)
             throws ParseException, TypeException, NumberFormatException {
         SimpleDateFormat spf = new SimpleDateFormat("dd-MM-yyyy");
         this.recordType = recordType;

@@ -61,7 +61,7 @@ public class ViewCommand extends Command {
         default:
             feedback = Messages.MESSAGE_CANT_VIEW_LIST;
         }
-        AddTitleToFeedback();
+        addTitleToFeedback();
         return new CommandResult(feedback);
     }
 
@@ -83,7 +83,7 @@ public class ViewCommand extends Command {
         }
     }
 
-    private void AddTitleToFeedback() {
+    private void addTitleToFeedback() {
         String recordString = recordType.toString().toLowerCase().replace("_", " ");
         String feedbackHeading = String.format(Messages.MESSAGE_VIEW_TITLE, recordString);
         feedback = feedbackHeading + feedback;

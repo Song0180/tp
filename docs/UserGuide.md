@@ -87,6 +87,217 @@ A new exercise activity record is added successfully!
 Record summary: 60 minutes football exercise on 05-01-2020.
 ```
 
+
+### Input Sleep Data: `add`
+Add one sleep record with the duration and the date.
+
+Format: `add  t/S  d/DURATION  [date/DD-MM-YYYY]`
+
+* Add one day’s sleep record with a duration. The duration `d/DURATION` **MUST** be specified.
+* The tag value should be `S` in the upper case, which specifies that the current record is for **sleep data**.
+* The default unit of duration is in **hours**. An `integer` is expected for the duration, other formats are **not acceptable**.
+* The date of the sleep record `[date/DD-MM-YYYY]` is optional. If not provided, the system date will be used.
+* The date should be **less than or equal to** the current date.
+* The date format should be `DD-MM-YYYY`, other formats are not acceptable.
+
+
+Example of usage:  
+`add t/S d/7` add one sleep record for 7 hours. 
+
+Output:
+```
+A new sleep record is added successfully!
+Record summary: 7 hours of sleep on XX-XX-XXXX(Today).
+```
+
+`add t/S  d/8  date/05-01-2020` add one sleep record of 8 hours on 05-01-2020.
+
+Output:
+```
+A new sleep record is added successfully!
+Record summary: 8 hours of sleep on 05-01-2020.
+```
+
+`add t/S  d/5  date/05-01-2020` add one sleep record of 5 hours on the same date again.
+
+Output:
+```
+A sleep record is already added for the date 05-01-2020.
+Please try adding the record for another date or delete the existing record. 
+```
+
+### View Sleep Data: `view`
+View one sleep record with the duration and the date.
+
+Format: `view  t/S  [date/DD-MM-YYYY]`
+
+* View existing sleep records. The records will be sorted by date in descending order (The latest record will be the first record).
+* The tag value should be `S` in the upper case, which specifies that the current record is for **sleep data**.
+* The date of sleep record is an optional field used for filtering the records that will be displayed. If none, all existing records will be displayed.
+* The date of the sleep record may be specified to view records on the specified date.
+* If no record is found on the given date, an error message will be displayed.
+* The date should be **less than or equal to** the current date.
+* The date format should be `DD-MM-YYYY`, other formats are not acceptable.
+
+
+Example of usage:  
+`view t/S` view all sleep records.
+
+Output:
+```
+Displaying all sleep records:
+ndex    Date         Duration 
+1        15-01-2020    8 hours
+2        05-01-2020    7 hours
+```
+
+`view t/S date/05-01-2020` view sleep at the date of 05-01-2020.
+
+Output:
+```
+Displaying all exercise records on date 05-01-2020:
+Index    Date         Duration 
+1        05-01-2020    7 hours
+```
+
+`view t/S date/05-02-2029`  view sleep at the date of 05-02-2029.
+
+Output:
+```
+Sorry, no record is found on the date 05-02-2029
+```
+
+### Delete Sleep Data: `delete`
+Delete existing sleep record.
+
+Format: `delete  t/S i/INDEX`
+
+* Delete a single sleep record using the `Index` of the record.
+* The tag value should be `S` in the upper case, which specifies that the current record is for **sleep data**.
+* The index of the record must be specified.
+* The index must be an integer within the range of the total number of records, index out of range or other formats are not acceptable.
+
+Example of usage:  
+`Delete t/S i/1`  delete the exercise record of index 1.
+
+Output:
+```
+You have successfully deleted the sleep record of index 1!
+Record summary: 15-01-2020    8 hours
+Displaying current exercise records:
+Index    Date         Duration 
+1        05-01-2020    8 hours  
+```
+
+### Input bodyweight Data: `add`
+Add one bodyweight record with the date.
+
+Format: `add  t/W w/WEIGHT [date/DD-MM-YYYY]`
+
+* Add one bodyweight record. The body weight must be specified. 
+* The tag value should be `W` in the upper case, which specifies that the current record is for **bodyweight**.
+* The default unit of body weight is in kilograms. The body weight should be a `double floating-point number`.
+* The date of the bodyweight record is optional. If not provided, the system date will be used.
+* The date should be less than or equal to the current date.
+* The date should be **less than or equal to** the current date.
+* The date format should be `DD-MM-YYYY`, other formats are not acceptable.
+* There is at most one bodyweight record for each day. An error message will be printed when trying to add a record with the same date as any existing record.
+
+Example of usage:  
+`add t/W w/68.5 date/10-01-2021` add a bodyweight record of 68.5kg on 10 Jan 2021.
+
+Output:
+```
+A new bodyweight record is added successfully!
+Record summary: body weight 68.5kg on 10-01-2021.
+```
+
+`add t/W w/69`  add a bodyweight record of 69kg.
+
+Output:
+```
+A new bodyweight record is added successfully!
+Record summary: body weight 69kg on XX-XX-XXXX(Today).
+```
+
+### Delete Sleep Data: `delete`
+Delete existing sleep record.
+
+Format: `delete  t/S i/INDEX`
+
+* Delete a single sleep record using the `Index` of the record.
+* The tag value should be `S` in the upper case, which specifies that the current record is for **sleep data**.
+* The index of the record must be specified.
+* The index must be an integer within the range of the total number of records, index out of range or other formats are not acceptable.
+
+Example of usage:  
+`Delete t/S i/1`  delete the exercise record of index 1.
+
+Output:
+```
+You have successfully deleted the sleep record of index 1!
+Record summary: 15-01-2020    8 hours
+Displaying current exercise records:
+Index    Date         Duration 
+1        05-01-2020    8 hours  
+```
+
+### View Bodyweight Data: `view`
+View existing bodyweight record.
+
+Format: `view  t/W  [date/DD-MM-YYYY]`
+
+* View existing bodyweight records. The records will be sorted by date in descending order (The latest record will be the first record).
+* The tag value should be `W` in the upper case, which specifies that the current record is for **bodyweight**.
+* The date is an optional field used to view records on the specified date. If none, all existing records will be displayed.
+* The date of the bodyweight record is optional. If not provided, the system date will be used.
+* The date should be less than or equal to the current date.
+* The date should be **less than or equal to** the current date.
+* The date format should be `DD-MM-YYYY`, other formats are not acceptable.
+
+Example of usage:  
+`view t/W` view all bodyweight records
+
+Output:
+```
+Displaying all bodyweight records: 
+Index    Date         Body Weight   
+1        15-01-2020   68.5     
+2        05-01-2020   69    
+```
+
+`view t/W date/05-01-2020` view body weight record at the date of 05-02-2020
+
+Output:
+```
+Displaying body weight records on date 05-01-2020:
+Index    Date         Body Weight 
+1        05-01-2020   68.5
+```
+
+### Delete Bodyweight Data: `view`
+Delete existing bodyweight record.
+
+Format: ` t/W i/INDEX`
+
+* Delete a single bodyweight record using the Index of the record.
+* The tag value should be `W` in the upper case, which specifies that the current record is for **bodyweight**.
+* The index of the record must be specified. The index must be an `integer` within the range of the total number of records, index out of range or other formats are not acceptable.
+
+Example of usage:  
+`Delete t/W i/1` delete the bodyweight record of index 1
+
+Output:
+```
+You have successfully deleted the bodyweight record of index 1!
+Record summary: 15-01-2020   67
+Displaying current exercise records:
+Index    Date         Body Weight
+1        20-01-2020   68
+```
+
+
+
 ## FAQ
 
 **Q**: {?}

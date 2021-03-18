@@ -12,7 +12,6 @@ public class Diet extends Record {
     private double calorie;
     private final FoodCategory foodCategory;
     private final double amount;
-    private final LocalDate date;
     private final String formattedDate;
     private static final String SUMMARY_FORMAT = "%sg %s on %s";
     private static final String LIST_VIEW_FORMAT = "%s     %s      %sg";
@@ -46,7 +45,7 @@ public class Diet extends Record {
     }
 
     public String getListViewFormat() {
-        return String.format(SUMMARY_FORMAT,
+        return String.format(LIST_VIEW_FORMAT,
                 foodCategory.toString().toLowerCase(Locale.ROOT), "" + amount, formattedDate);
     }
 

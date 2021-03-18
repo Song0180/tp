@@ -3,35 +3,26 @@ package seedu.duke.record;
 import java.time.LocalDate;
 
 public class Sleep extends Record {
-    private int duration;
+    private final int duration;
 
     /**
-     * Initializes the object with given record type and date.
+     * Represents a record of sleeping data
      *
-     * @param type the type of the record.
-     * @param date the date of the record.
+     * @param duration the duration of the sleep.
+     * @param date     the date of the sleep.
      */
-    public Sleep(RecordType type, LocalDate date) {
-        super(type, date);
-        duration = 0;
+    public Sleep(int duration, LocalDate date) {
+        super(RecordType.SLEEP, date);
+        this.duration = duration;
     }
 
     /**
      * Gets the duration of a sleep record.
      *
-     * @return
+     * @return the duration of the sleep record.
      */
     public int getDuration() {
         return duration;
-    }
-
-    /**
-     * Sets the duration of the sleep record.
-     *
-     * @param duration duration of the sleep record.
-     */
-    public void setDuration(int duration) {
-        this.duration = duration;
     }
 
     /**
@@ -41,6 +32,6 @@ public class Sleep extends Record {
      */
     @Override
     public String getRecordSummary() {
-        return getType() + ": " + getDuration() + " on " + getDate();
+        return "Sleep of " + getDuration() + " hours on " + getDate();
     }
 }

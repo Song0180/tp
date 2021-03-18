@@ -1,9 +1,9 @@
 package seedu.duke.command;
 
 import seedu.duke.account.FitCenter;
+import seedu.duke.common.Messages;
 import seedu.duke.exception.TypeException;
-import seedu.duke.record.Diet;
-import seedu.duke.record.Record;
+import seedu.duke.record.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -23,34 +23,39 @@ public class AddCommand extends Command {
         this.recordType = recordType;
         spf.setLenient(false);
         String dateString = params.get("date");
-        LocalDate localDate;
+        LocalDate recordDate;
         if (dateString != null) {
             Date date = spf.parse(dateString);
-            localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            recordDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         } else {
-            localDate = LocalDate.now();
+            recordDate = LocalDate.now();
         }
         switch (recordType) {
         case EXERCISE:
-            System.out.println(params.get("activity") + params.get("duration") + localDate.toString());
+            record = new Exercise(params.get("activity"), Integer.parseInt(params.get("duration")), recordDate);
             break;
         case DIET:
-            record = new Diet(params.get("food"), params.get("weight"), localDate);
+            record = new Diet(params.get("food"), params.get("weight"), recordDate);
             break;
         case SLEEP:
-            System.out.println(params.get("duration") + localDate.toString());
+            record = new Sleep(Integer.parseInt(params.get("duration")), recordDate);
             break;
         case BODY_WEIGHT:
-            System.out.println(params.get("weight") + localDate.toString());
+            record = new BodyWeight(Double.parseDouble(params.get("weight")), recordDate);
             break;
         default:
-            System.out.println("There is something wrong within the system.");
+            record = null;
         }
     }
 
     public CommandResult execute(FitCenter fitCenter) {
-        fitCenter.addRecordToList(recordType, record);
-        feedback = String.format(FEEDBACK_FORMAT, record.getType(), record.getRecordSummary());
+        String feedback;
+        if (record != null) {
+            fitCenter.addRecordToList(recordType, record);
+            feedback = String.format(FEEDBACK_FORMAT, record.getType(), record.getRecordSummary());
+        } else {
+            feedback = Messages.MESSAGE_CANT_ADD_RECORD;
+        }
         return new CommandResult(feedback);
     }
 }

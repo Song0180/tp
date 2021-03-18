@@ -9,7 +9,6 @@ public enum FoodCategory {
     GRAIN(350),
     INVALID(0);
     private final double caloriePer100g;
-    public static final String validFoodList = "1.VEGETABLE\n2.FRUIT\n3.PROTEIN\n4.GRAIN";
 
     FoodCategory(double caloriePer100g) {
         this.caloriePer100g = caloriePer100g;
@@ -26,5 +25,15 @@ public enum FoodCategory {
             }
         }
         return INVALID;
+    }
+
+    public static String getValidFoodList() {
+        StringBuilder foodList = new StringBuilder();
+        int i = 1;
+        for (FoodCategory foodCategory : FoodCategory.values()) {
+            foodList.append(i).append(". ").append(foodCategory);
+            i++;
+        }
+        return foodList.toString();
     }
 }

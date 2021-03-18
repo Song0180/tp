@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class ViewCommand extends Command {
     private final CommandRecordType recordType;
     private HashMap<String, String> specifiedParams = null;
-    private LocalDate localDate;
+    private LocalDate recordDate;
 
     public ViewCommand(CommandRecordType type) {
         recordType = type;
@@ -28,15 +28,15 @@ public class ViewCommand extends Command {
             SimpleDateFormat spf = new SimpleDateFormat("dd-MM-yyyy");
             spf.setLenient(false);
             Date date = spf.parse(dateString);
-            localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            recordDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         }
     }
 
     private String getRecordsWithOptionalParam(FitCenter fitCenter, String optionalParam) {
         if (specifiedParams.size() == 2) {
-            return fitCenter.getRecordListString(recordType, localDate, optionalParam);
+            return fitCenter.getRecordListString(recordType, recordDate, optionalParam);
         } else if (specifiedParams.size() == 1 && specifiedParams.containsKey("date")) {
-            return fitCenter.getRecordListString(recordType, localDate);
+            return fitCenter.getRecordListString(recordType, recordDate);
         } else {
             return fitCenter.getRecordListString(recordType, optionalParam);
         }
@@ -44,7 +44,7 @@ public class ViewCommand extends Command {
 
     private String getRecordsWithoutOptionalParam(FitCenter fitCenter) {
         if (specifiedParams != null) {
-            return fitCenter.getRecordListString(recordType, localDate);
+            return fitCenter.getRecordListString(recordType, recordDate);
         } else {
             return fitCenter.getRecordListString(recordType);
         }

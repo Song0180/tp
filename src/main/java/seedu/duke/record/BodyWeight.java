@@ -3,27 +3,11 @@ package seedu.duke.record;
 import java.time.LocalDate;
 
 public class BodyWeight extends Record {
-    private double weight;
+    private final double weight;
 
-    /**
-     * Initializes the object with given record type and date.
-     *
-     * @param type the type of the record.
-     * @param date the date of the record.
-     */
-    public BodyWeight(RecordType type, LocalDate date, double weight) {
-        super(type, date);
+    public BodyWeight(double weight, LocalDate date) {
+        super(RecordType.BODYWEIGHT, date);
         this.weight = weight;
-    }
-
-    /**
-     * Gets the body weight summary.
-     *
-     * @return the summary of body weight.
-     */
-    @Override
-    public String getRecordSummary() {
-        return null;
     }
 
     /**
@@ -36,11 +20,12 @@ public class BodyWeight extends Record {
     }
 
     /**
-     * Sets a new weight of user.
+     * Gets the body weight summary.
      *
-     * @param weight set users' weight.
+     * @return the summary of body weight.
      */
-    public void setWeight(double weight) {
-        this.weight = weight;
+    @Override
+    public String getRecordSummary() {
+        return "Body weight: " + getWeight() + "Kg on " + getDate();
     }
 }

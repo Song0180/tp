@@ -14,10 +14,22 @@ public class Messages {
             + "Use command 'help' to see what you can do.";
     public static final String MESSAGE_NO_RECORD = "Sorry, no records found.\n"
             + "You can try adding records by using command 'add'.";
-    public static final String MESSAGE_SEE_HELP = "To learn more about the commands, try use command 'help'";
-    public static final String MESSAGE_CANT_VIEW_LIST = "Sorry, cannot view record list of an incorrect record type.";
+    public static final String MESSAGE_CANT_ADD_RECORD = "Sorry, you cannot add record of an unrecognized type.";
+    public static final String MESSAGE_CANT_VIEW_LIST = "Sorry, you cannot view record list "
+            + "of an incorrect record type.";
     public static final String MESSAGE_SYSTEM_ERROR = "There is something wrong within the system.";
+    public static final String MESSAGE_NUMBER_FORMAT_ERROR = "Please check the value you filled in for the number field.";
     public static final String MESSAGE_INVALID_DATE_FORMAT = "The date format is incorrect. Please try again.\n";
+    public static final String MESSAGE_INVALID_SLEEP_HOUR = "The duration you entered is invalid.\n"
+            + "It should be an positive integer between 0 and 24.\nPlease try again.";
+    public static final String MESSAGE_INVALID_WORKOUT_MIN = "The duration you entered is invalid.\n"
+            + "It should be an positive integer between 0 and 1440.\nPlease try again.";
+    public static final String MESSAGE_INVALID_WEIGHT = "The weight you entered is invalid.\n"
+            + "It should be an positive double number.\nPlease try again.";
+    public static final String MESSAGE_INVALID_FOOD_CATEGORY = "The food category you entered is invalid.\n"
+            + "The acceptable food category list is:\n";
+    public static final String MESSAGE_INVALID_WORKOUT_CATEGORY = "The workout category you entered is invalid.\n"
+            + "The acceptable workout category list is:\n";
     public static final String MESSAGE_INVALID_COMMAND = "Sorry, the command you entered cannot be recognized.\n\n";
     public static final String MESSAGE_INVALID_COMMAND_WORD = "The command word is invalid. "
             + "Enter help to see help messages\n";

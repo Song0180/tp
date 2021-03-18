@@ -128,10 +128,10 @@ public class RecordList {
         return FoodCategory.valueOf(optionalParam.toUpperCase());
     }
 
-    private WorkOutCategory parseStringToWorkoutCategory(String optionalParam) throws IllegalArgumentException {
-        return WorkOutCategory.valueOf(optionalParam.toUpperCase());
+    private WorkoutCategory parseStringToWorkoutCategory(String optionalParam) throws IllegalArgumentException {
+        return WorkoutCategory.valueOf(optionalParam.toUpperCase());
     }
-    
+
     private String getDietRecordString(String optionalParam, StringBuilder recordStringBuilder) {
         for (Record record : records) {
             Diet diet = (Diet) record;
@@ -166,8 +166,8 @@ public class RecordList {
     private String getExerciseRecordString(String optionalParam, StringBuilder recordStringBuilder) {
         for (Record record : records) {
             Exercise exercise = (Exercise) record;
-            WorkOutCategory paramCategory = getWorkOutCategory(optionalParam);
-            if (exercise.getWorkout().getCategory().equals(paramCategory)) {
+            WorkoutCategory paramCategory = getWorkOutCategory(optionalParam);
+            if (exercise.getWorkoutCategory().equals(paramCategory)) {
                 recordStringBuilder.append(record.getRecordSummary()).append("\n");
             }
         }
@@ -181,8 +181,8 @@ public class RecordList {
     private String getExerciseRecordString(LocalDate date, String optionalParam, StringBuilder recordStringBuilder) {
         for (Record record : records) {
             Exercise exercise = (Exercise) record;
-            WorkOutCategory paramCategory = getWorkOutCategory(optionalParam);
-            if (exercise.getDate().isEqual(date) && exercise.getWorkout().getCategory().equals(paramCategory)) {
+            WorkoutCategory paramCategory = getWorkOutCategory(optionalParam);
+            if (exercise.getDate().isEqual(date) && exercise.getWorkoutCategory().equals(paramCategory)) {
                 recordStringBuilder.append(record.getRecordSummary()).append("\n");
             }
         }
@@ -203,12 +203,12 @@ public class RecordList {
         return paramCategory;
     }
 
-    private WorkOutCategory getWorkOutCategory(String optionalParam) {
-        WorkOutCategory paramCategory;
+    private WorkoutCategory getWorkOutCategory(String optionalParam) {
+        WorkoutCategory paramCategory;
         try {
             paramCategory = parseStringToWorkoutCategory(optionalParam);
         } catch (IllegalArgumentException e) {
-            paramCategory = WorkOutCategory.INVALID;
+            paramCategory = WorkoutCategory.INVALID;
         }
         return paramCategory;
     }

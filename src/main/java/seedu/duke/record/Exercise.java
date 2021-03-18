@@ -1,50 +1,49 @@
 package seedu.duke.record;
 
+import seedu.duke.exception.TypeException;
+
 import java.time.LocalDate;
 
 public class Exercise extends Record {
-    private double totalCalories;
-    Workout workout;
+    private double calories;
+    private final WorkoutCategory workoutCategory;
+    private final int duration;
 
-    /**
-     * Initializes the object with given record type and date.
-     *
-     * @param type the type of the record.
-     * @param date the date of the record.
-     */
-    public Exercise(RecordType type, LocalDate date) {
-        super(type, date);
-        totalCalories = 0;
+
+    public Exercise(String activityStr, int duration, LocalDate date) throws TypeException {
+        super(RecordType.EXERCISE, date);
+        try {
+            workoutCategory = WorkoutCategory.valueOf(activityStr.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new TypeException("workout type exception");
+        }
+        this.duration = duration;
+        this.calories = calculateCalories();
     }
 
-    /**
-     * Returns total calories of exercises.
-     *
-     * @return a float number of total calories.
-     */
-    public double getTotalCalories() {
-        return totalCalories;
+    private double calculateCalories() {
+        double bodyWeight = 50.0;
+        double durationInHour = duration / 60d;
+        int metValue = 12;
+        calories = bodyWeight * metValue * durationInHour;
+        return calories;
     }
 
-    /**
-     * Prints the workouts done.
-     */
-    public void printWorkOuts() {
-        System.out.print(workout.getCategory());
+    public double getCalories() {
+        return calories;
     }
 
-    public Workout getWorkout() {
-        return workout;
+    public WorkoutCategory getWorkoutCategory() {
+        return workoutCategory;
     }
 
-    /**
-     * Gets a summary of the record.
-     *
-     * @return a String of a summary of the record.
-     */
+    public int getDuration() {
+        return duration;
+    }
+
     @Override
     public String getRecordSummary() {
-        return workout.getCategory() + ": " + workout.getCalories() + " for "
-                + workout.getDuration() + " on " + this.getDate();
+        return "Exercise record: " + getDuration() + " minutes of "
+                + getWorkoutCategory() + " on " + getDate().toString();
     }
 }

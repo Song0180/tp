@@ -2,7 +2,6 @@ package seedu.duke.command;
 
 
 import seedu.duke.account.FitCenter;
-import seedu.duke.record.RecordType;
 
 
 import java.util.HashMap;
@@ -11,8 +10,8 @@ import java.util.Locale;
 public class DeleteCommand extends Command {
     private static final String FEEDBACK_FORMAT = "You have successfully deleted the %s record of "
             + "index %s!\nRecord summary: %s\nDisplaying current exercise records:";
-    private CommandRecordType recordType;
-    private int indexToDelete;
+    private final CommandRecordType recordType;
+    private final int indexToDelete;
 
     public DeleteCommand(CommandRecordType recordType, HashMap<String, String> params) throws NumberFormatException {
         this.recordType = recordType;
@@ -28,7 +27,7 @@ public class DeleteCommand extends Command {
             return new CommandResult(feedback);
         } catch (IndexOutOfBoundsException e) {
             return new CommandResult("The index you entered is out of bound.\n"
-                    + "Here are the tasks of type " + recordType.toString().toLowerCase(Locale.ROOT) + ":\n"
+                    + "Here are the records of type " + recordType.toString().toLowerCase(Locale.ROOT) + ":\n"
                     + fitCenter.getRecordListString(recordType));
         }
     }

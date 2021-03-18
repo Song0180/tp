@@ -102,16 +102,6 @@ public class RecordList {
         }
     }
 
-
-    private FoodCategory parseStringToFoodCategory(String optionalParam) throws IllegalArgumentException {
-        return FoodCategory.valueOf(optionalParam.toUpperCase());
-    }
-
-    private WorkOutCategory parseStringToWorkoutCategory(String optionalParam) throws IllegalArgumentException {
-        return WorkOutCategory.valueOf(optionalParam.toUpperCase());
-    }
-
-
     /**
      * Gets all records that match the pattern in the given parameter on a given date.
      *
@@ -134,6 +124,14 @@ public class RecordList {
         }
     }
 
+    private FoodCategory parseStringToFoodCategory(String optionalParam) throws IllegalArgumentException {
+        return FoodCategory.valueOf(optionalParam.toUpperCase());
+    }
+
+    private WorkOutCategory parseStringToWorkoutCategory(String optionalParam) throws IllegalArgumentException {
+        return WorkOutCategory.valueOf(optionalParam.toUpperCase());
+    }
+    
     private String getDietRecordString(String optionalParam, StringBuilder recordStringBuilder) {
         for (Record record : records) {
             Diet diet = (Diet) record;

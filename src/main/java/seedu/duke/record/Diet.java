@@ -41,11 +41,13 @@ public class Diet extends Record {
      */
     @Override
     public String getRecordSummary() {
-        return String.format(SUMMARY_FORMAT, "" + amount, foodCategory.toString().toLowerCase(Locale.ROOT), formattedDate);
+        return String.format(SUMMARY_FORMAT, "" + amount,
+                foodCategory.toString().toLowerCase(Locale.ROOT), formattedDate);
     }
 
     public String getListViewFormat() {
-        return String.format(SUMMARY_FORMAT, foodCategory.toString().toLowerCase(Locale.ROOT), "" + amount, formattedDate);
+        return String.format(SUMMARY_FORMAT,
+                foodCategory.toString().toLowerCase(Locale.ROOT), "" + amount, formattedDate);
     }
 
     public FoodCategory getFoodCategory() {

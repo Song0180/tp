@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import seedu.duke.command.CommandRecordType;
 import seedu.duke.common.Messages;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FitCenterTest {
 

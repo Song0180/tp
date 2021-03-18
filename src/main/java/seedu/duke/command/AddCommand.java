@@ -53,7 +53,6 @@ public class AddCommand extends Command {
     }
 
     public CommandResult execute(FitCenter fitCenter) {
-        String feedback;
         if (record != null) {
             fitCenter.addRecordToList(recordType, record);
             feedback = String.format(FEEDBACK_FORMAT, record.getType(), record.getRecordSummary());

@@ -6,7 +6,7 @@ public class Sleep extends Record {
     private final int duration;
 
     /**
-     * Represents a record of sleeping data
+     * Represents a record of sleeping data.
      *
      * @param duration the duration of the sleep.
      * @param date     the date of the sleep.

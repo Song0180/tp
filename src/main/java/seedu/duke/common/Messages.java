@@ -18,7 +18,7 @@ public class Messages {
     public static final String MESSAGE_CANT_VIEW_LIST = "Sorry, you cannot view record list "
             + "of an incorrect record type.";
     public static final String MESSAGE_SYSTEM_ERROR = "There is something wrong within the system.";
-    public static final String MESSAGE_NUMBER_FORMAT_ERROR = "Please check the value you filled in for the number field.";
+    public static final String MESSAGE_NUMBER_FORMAT_ERROR = "Please check the value for the number field.";
     public static final String MESSAGE_INVALID_DATE_FORMAT = "The date format is incorrect. Please try again.\n";
     public static final String MESSAGE_INVALID_SLEEP_HOUR = "The duration you entered is invalid.\n"
             + "It should be an positive integer between 0 and 24.\nPlease try again.";

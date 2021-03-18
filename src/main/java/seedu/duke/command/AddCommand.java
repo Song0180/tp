@@ -3,7 +3,11 @@ package seedu.duke.command;
 import seedu.duke.account.FitCenter;
 import seedu.duke.common.Messages;
 import seedu.duke.exception.TypeException;
-import seedu.duke.record.*;
+import seedu.duke.record.Record;
+import seedu.duke.record.BodyWeight;
+import seedu.duke.record.Diet;
+import seedu.duke.record.Exercise;
+import seedu.duke.record.Sleep;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

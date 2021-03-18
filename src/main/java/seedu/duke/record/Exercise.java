@@ -33,6 +33,10 @@ public class Exercise extends Record {
         System.out.print(workout.getCategory());
     }
 
+    public Workout getWorkout() {
+        return workout;
+    }
+
     /**
      * Gets a summary of the record.
      *
@@ -40,7 +44,7 @@ public class Exercise extends Record {
      */
     @Override
     public String getRecordSummary() {
-        return workout.getType() + ": " + workout.getCalories() + " for "
-                + workout.getDuration() + " on " + workout.getDate();
+        return workout.getCategory() + ": " + workout.getCalories() + " for "
+                + workout.getDuration() + " on " + this.getDate();
     }
 }

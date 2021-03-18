@@ -6,7 +6,7 @@ import java.util.HashMap;
 /**
  * Represents a workout record.
  */
-public class Workout extends Exercise {
+public class Workout {
     private HashMap<String, Integer> workOutCalPerMin;
     private WorkOutCategory category;
     private int duration;
@@ -19,7 +19,6 @@ public class Workout extends Exercise {
      * @param date the date of the record.
      */
     public Workout(RecordType type, LocalDate date) {
-        super(type, date);
         duration = 0;
         calories = 0;
     }
@@ -66,11 +65,11 @@ public class Workout extends Exercise {
      * @return the calories burnt during the workout.
      */
     private double calculateCalories() {
-        //not sure how to calculate this, formulae online require bodyweight.
-        double bodyweight = 50.0;
-        double durationInHour = duration / 60;
+        //not sure how to calculate this, formulae online require body weight.
+        double bodyWeight = 50.0;
+        double durationInHour = duration / 60d;
         int metValue = 12;
-        calories = bodyweight * metValue * durationInHour;
+        calories = bodyWeight * metValue * durationInHour;
         return calories;
     }
 }

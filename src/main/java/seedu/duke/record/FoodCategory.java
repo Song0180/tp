@@ -1,7 +1,5 @@
 package seedu.duke.record;
 
-import seedu.duke.command.CommandRecordType;
-
 import java.util.Locale;
 
 public enum FoodCategory {
@@ -10,10 +8,10 @@ public enum FoodCategory {
     FRUIT(40),
     GRAIN(350),
     INVALID(0);
-    private double caloriePer100g;
+    private final double caloriePer100g;
     public static final String validFoodList = "1.VEGETABLE\n2.FRUIT\n3.PROTEIN\n4.GRAIN";
 
-    private FoodCategory(double caloriePer100g) {
+    FoodCategory(double caloriePer100g) {
         this.caloriePer100g = caloriePer100g;
     }
 

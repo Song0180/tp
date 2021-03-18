@@ -13,5 +13,6 @@ public enum WorkOutCategory {
     DANCE,
     COOLDOWN,
     SWIMMING,
-    CORETRAINING;
+    CORETRAINING,
+    INVALID
 }

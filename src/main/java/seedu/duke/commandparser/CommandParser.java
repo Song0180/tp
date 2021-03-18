@@ -226,20 +226,15 @@ public class CommandParser {
         if (hasFood) {
             food = parseDiet(optionalParams, false);
             if (food.equals("")) {
-                //System.out.println("Invalid");
                 return new InvalidCommand(VIEW);
             }
             if (!hasDate) {
-                //System.out.println(activity);
                 params.put("food", food);
-                //return;
                 return new ViewCommand(DIET, params);
             }
             String[] foodDate = getDate(food);
             if (foodDate.length == 0) {
                 return new InvalidCommand(VIEW);
-                //System.out.println("Invalid");
-                //return;
             }
             food = foodDate[0];
             date = foodDate[1];

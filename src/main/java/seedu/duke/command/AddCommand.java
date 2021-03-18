@@ -12,12 +12,10 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.HashMap;
 
-import static seedu.duke.command.CommandRecordType.DIET;
-
 public class AddCommand extends Command {
     private static final String FEEDBACK_FORMAT = "A new %s record is added successfully!\nRecord summary:%s";
     private Record record;
-    private CommandRecordType recordType;
+    private final CommandRecordType recordType;
 
     public AddCommand(CommandRecordType recordType, HashMap<String, String> params)
             throws ParseException, TypeException, NumberFormatException {
@@ -34,18 +32,15 @@ public class AddCommand extends Command {
         }
         switch (recordType) {
         case EXERCISE:
-            //record = new DietRecord(recordType.EXERCISE, params.get("activity"), params.get("duration"), localDate);
             System.out.println(params.get("activity") + params.get("duration") + localDate.toString());
             break;
         case DIET:
             record = new Diet(params.get("food"), params.get("weight"), localDate);
             break;
         case SLEEP:
-            //record = new DietRecord(recordType.SLEEP, params.get("duration"), localDate);
             System.out.println(params.get("duration") + localDate.toString());
             break;
         case BODY_WEIGHT:
-            //record = new DietRecord(recordType.BODYWEIGHT, params.get("weight"), localDate);
             System.out.println(params.get("weight") + localDate.toString());
             break;
         default:

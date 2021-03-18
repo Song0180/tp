@@ -31,8 +31,10 @@ public enum FoodCategory {
         StringBuilder foodList = new StringBuilder();
         int i = 1;
         for (FoodCategory foodCategory : FoodCategory.values()) {
-            foodList.append(i).append(". ").append(foodCategory);
-            i++;
+            if (!foodCategory.equals(INVALID)) {
+                foodList.append(i).append(". ").append(foodCategory).append("\n");
+                i++;
+            }
         }
         return foodList.toString();
     }

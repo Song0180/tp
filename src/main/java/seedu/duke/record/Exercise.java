@@ -43,7 +43,15 @@ public class Exercise extends Record {
 
     @Override
     public String getRecordSummary() {
-        return "Exercise record: " + getDuration() + " minutes of "
-                + getWorkoutCategory() + " on " + getDate().toString();
+        return getDuration() + " minutes of "
+                + getWorkoutCategory() + " exercise on " + getDate().format(DATE_FORMATTER);
+    }
+
+    @Override
+    public String getRecordData() {
+        return "\t\t\t" + getDate().format(DATE_FORMATTER)
+                + "\t" + getWorkoutCategory()
+                + "\t\t\t" + getDuration() + " minute(s)"
+                + "\t" + getCalories() + " cal";
     }
 }

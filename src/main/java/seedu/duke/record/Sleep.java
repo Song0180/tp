@@ -32,6 +32,12 @@ public class Sleep extends Record {
      */
     @Override
     public String getRecordSummary() {
-        return "Sleep of " + getDuration() + " hours on " + getDate();
+        return getDuration() + " hours of sleep on " + getDate().format(DATE_FORMATTER);
+    }
+
+    @Override
+    public String getRecordData() {
+        return "\t\t\t" + getDate().format(DATE_FORMATTER)
+                + "\t\t" + getDuration() + " hour(s)";
     }
 }

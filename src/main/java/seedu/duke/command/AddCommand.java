@@ -17,7 +17,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 public class AddCommand extends Command {
-    private static final String FEEDBACK_FORMAT = "A new %s record is added successfully!\nRecord summary:%s";
+    private static final String FEEDBACK_FORMAT = "A new %s record is added successfully!\nRecord summary:\n%s";
     private final Record record;
     private final CommandRecordType recordType;
 

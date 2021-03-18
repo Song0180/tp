@@ -32,6 +32,39 @@ public class ViewCommand extends Command {
         }
     }
 
+    public CommandResult execute(FitCenter fitCenter) {
+        switch (recordType) {
+        case SLEEP:
+            feedback = getRecordsWithoutOptionalParam(fitCenter);
+            feedback = getFeedbackWithHeader(Messages.MESSAGE_VIEW_HEADER_SLEEP);
+            break;
+        case BODY_WEIGHT:
+            feedback = getRecordsWithoutOptionalParam(fitCenter);
+            feedback = getFeedbackWithHeader(Messages.MESSAGE_VIEW_HEADER_WEIGHT);
+            break;
+        case EXERCISE:
+            if (specifiedParams != null) {
+                feedback = getRecordsWithOptionalParam(fitCenter, specifiedParams.get("activity"));
+            } else {
+                feedback = getRecordsWithoutOptionalParam(fitCenter);
+            }
+            feedback = getFeedbackWithHeader(Messages.MESSAGE_VIEW_HEADER_EXERCISE);
+            break;
+        case DIET:
+            if (specifiedParams != null) {
+                feedback = getRecordsWithOptionalParam(fitCenter, specifiedParams.get("food"));
+            } else {
+                feedback = getRecordsWithoutOptionalParam(fitCenter);
+            }
+            feedback = getFeedbackWithHeader(Messages.MESSAGE_VIEW_HEADER_DIET);
+            break;
+        default:
+            feedback = Messages.MESSAGE_CANT_VIEW_LIST;
+        }
+        AddTitleToFeedback();
+        return new CommandResult(feedback);
+    }
+
     private String getRecordsWithOptionalParam(FitCenter fitCenter, String optionalParam) {
         if (specifiedParams.size() == 2) {
             return fitCenter.getRecordListString(recordType, recordDate, optionalParam);
@@ -50,31 +83,13 @@ public class ViewCommand extends Command {
         }
     }
 
-    public CommandResult execute(FitCenter fitCenter) {
-        switch (recordType) {
-        case SLEEP:
-            //FALL-THROUGH
-        case BODY_WEIGHT:
-            feedback = getRecordsWithoutOptionalParam(fitCenter);
-            break;
-        case EXERCISE:
-            if (specifiedParams != null) {
-                feedback = getRecordsWithOptionalParam(fitCenter, specifiedParams.get("activity"));
-            } else {
-                feedback = getRecordsWithoutOptionalParam(fitCenter);
-            }
-            break;
-        case DIET:
-            if (specifiedParams != null) {
-                feedback = getRecordsWithOptionalParam(fitCenter, specifiedParams.get("food"));
-            } else {
-                feedback = getRecordsWithoutOptionalParam(fitCenter);
-            }
-            break;
-        default:
-            feedback = Messages.MESSAGE_CANT_VIEW_LIST;
-        }
-        return new CommandResult(feedback);
+    private void AddTitleToFeedback() {
+        String recordString = recordType.toString().toLowerCase().replace("_", " ");
+        String feedbackHeading = String.format(Messages.MESSAGE_VIEW_TITLE, recordString);
+        feedback = feedbackHeading + feedback;
     }
 
+    private String getFeedbackWithHeader(String header) {
+        return feedback.contains("Sorry") ? feedback : header + feedback;
+    }
 }

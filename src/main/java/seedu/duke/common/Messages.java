@@ -17,6 +17,11 @@ public class Messages {
     public static final String MESSAGE_HELP_GREETINGS = "Thank you for choosing to be healthier with us.\n"
             + "The current version of this application is: " + MESSAGE_VERSION + "\n"
             + MESSAGE_FEATURES + "\n";
+    public static final String MESSAGE_VIEW_TITLE = "Displaying all eligible %s records:\n";
+    public static final String MESSAGE_VIEW_HEADER_EXERCISE = "Index\t\tDate\t\tActivity\t\tDuration\t\tCalories\n";
+    public static final String MESSAGE_VIEW_HEADER_DIET = "Index\t\tDate\t\tFood Category\t\tWeight\t\tCalories\n";
+    public static final String MESSAGE_VIEW_HEADER_SLEEP = "Index\t\tDate\t\t\tDuration\n";
+    public static final String MESSAGE_VIEW_HEADER_WEIGHT = "Index\t\tDate\t\t\tBody Weight\n";
     public static final String MESSAGE_NO_RECORD = "Sorry, no records found.\n"
             + "You can try adding records by using command 'add'.";
     public static final String MESSAGE_CANT_ADD_RECORD = "Sorry, you cannot add record of an unrecognized type.";

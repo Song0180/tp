@@ -56,4 +56,11 @@ public abstract class Record {
      * @return a text summary of the record in String.
      */
     public abstract String getRecordSummary();
+
+    /**
+     * Gets all data of the record in a table row.
+     *
+     * @return a string of all data of the record in a table row.
+     */
+    public abstract String getRecordData();
 }

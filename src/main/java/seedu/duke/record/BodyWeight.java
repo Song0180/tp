@@ -26,6 +26,12 @@ public class BodyWeight extends Record {
      */
     @Override
     public String getRecordSummary() {
-        return "Body weight: " + getWeight() + "Kg on " + getDate();
+        return "Body weight " + getWeight() + "Kg on " + getDate().format(DATE_FORMATTER);
+    }
+
+    @Override
+    public String getRecordData() {
+        return "\t\t\t" + getDate().format(DATE_FORMATTER)
+                + "\t\t" + getWeight() + " Kg";
     }
 }

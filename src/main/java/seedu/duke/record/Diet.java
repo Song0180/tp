@@ -9,12 +9,11 @@ import static seedu.duke.record.FoodCategory.INVALID;
 import static seedu.duke.record.RecordType.DIET;
 
 public class Diet extends Record {
-    private double calorie;
+    private final double calorie;
     private final FoodCategory foodCategory;
     private final double amount;
     private final String formattedDate;
     private static final String SUMMARY_FORMAT = "%sg %s on %s";
-    private static final String LIST_VIEW_FORMAT = "%s     %s      %sg";
 
     /**
      * Initializes the object with given record type and date.
@@ -34,6 +33,33 @@ public class Diet extends Record {
     }
 
     /**
+     * Gets the calorie of the food.
+     *
+     * @return the calorie of the food.
+     */
+    public double getCalorie() {
+        return calorie;
+    }
+
+    /**
+     * Gets the weight of the food in g.
+     *
+     * @return the weight of the food in g.
+     */
+    public double getAmount() {
+        return amount;
+    }
+
+    /**
+     * Gets the category of the food.
+     *
+     * @return the category of the food.
+     */
+    public FoodCategory getFoodCategory() {
+        return foodCategory;
+    }
+
+    /**
      * Gets the summary of users' diet record.
      *
      * @return the diet summary.
@@ -44,12 +70,16 @@ public class Diet extends Record {
                 foodCategory.toString().toLowerCase(Locale.ROOT), formattedDate);
     }
 
-    public String getListViewFormat() {
-        return String.format(LIST_VIEW_FORMAT,
-                foodCategory.toString().toLowerCase(Locale.ROOT), "" + amount, formattedDate);
-    }
-
-    public FoodCategory getFoodCategory() {
-        return foodCategory;
+    /**
+     * Gets the record data of this diet record in a row.
+     *
+     * @return a string of the record data of this diet record in a row.
+     */
+    @Override
+    public String getRecordData() {
+        return "\t\t\t" + getDate().format(DATE_FORMATTER)
+                + "\t" + getFoodCategory()
+                + "\t\t\t\t" + getAmount() + " g"
+                + "\t\t" + getCalorie() + " cal";
     }
 }

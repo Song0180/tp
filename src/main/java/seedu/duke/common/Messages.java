@@ -24,20 +24,26 @@ public class Messages {
     public static final String MESSAGE_VIEW_HEADER_WEIGHT = "Index\t\tDate\t\t\tBody Weight\n";
     public static final String MESSAGE_NO_RECORD = "Sorry, no records found.\n"
             + "You can try adding records by using command 'add'.";
+    public static final String MESSAGE_INDEX_NUMBER_FORMAT_EXCEPTION = "The index field is not a valid number.\n"
+            + "Please try again.";
     public static final String MESSAGE_CANT_ADD_RECORD = "Sorry, you cannot add record of an unrecognized type.";
     public static final String MESSAGE_CANT_VIEW_LIST = "Sorry, you cannot view record list "
             + "of an incorrect record type.";
     public static final String MESSAGE_SYSTEM_ERROR = "There is something wrong within the system.";
-    public static final String MESSAGE_NUMBER_FORMAT_ERROR = "Please check the value for the number field.";
-    public static final String MESSAGE_INVALID_DATE_FORMAT = "The date format is incorrect. Please try again.\n";
+    //public static final String MESSAGE_NUMBER_FORMAT_ERROR = "Please check the value for the number field.";
+    public static final String MESSAGE_INVALID_DATE_FORMAT = "The date format is incorrect or the date is invalid. "
+            + "Please try again.\n";
     public static final String MESSAGE_INVALID_SLEEP_HOUR = "The duration you entered is invalid.\n"
-            + "It should be an positive integer between 0 and 24.\nPlease try again.";
+            + "It should be an positive integer between 0 and 24, with the unit of hour.\nPlease try again.";
     public static final String MESSAGE_INVALID_WORKOUT_MIN = "The duration you entered is invalid.\n"
-            + "It should be an positive integer between 0 and 1440.\nPlease try again.";
+            + "It should be an positive integer between 0 and 1440, with the unit of minute.\nPlease try again.";
     public static final String MESSAGE_INVALID_WEIGHT = "The weight you entered is invalid.\n"
-            + "It should be an positive double number.\nPlease try again.";
+            + "It should be an positive floating point number, with the unit of kilogram(kg).\nPlease try again.";
     public static final String MESSAGE_INVALID_FOOD_CATEGORY = "The food category you entered is invalid.\n"
             + "The acceptable food category list is:\n";
+    public static final String MESSAGE_INVALID_FOOD_AMOUNT = "The amount you entered is invalid.\n"
+            + "The acceptable amount of food should be a floating point number, with the unit of gram(g).\n"
+            + "Please try again.";
     public static final String MESSAGE_INVALID_WORKOUT_CATEGORY = "The workout category you entered is invalid.\n"
             + "The acceptable workout category list is:\n";
     public static final String MESSAGE_INVALID_COMMAND = "Sorry, the command you entered cannot be recognized.\n\n";

@@ -22,6 +22,7 @@ import static seedu.duke.command.CommandRecordType.INVALID;
 import static seedu.duke.command.CommandType.DELETE;
 import static seedu.duke.command.CommandType.ADD;
 import static seedu.duke.command.CommandType.VIEW;
+import static seedu.duke.common.Messages.MESSAGE_INDEX_NUMBER_FORMAT_EXCEPTION;
 
 public class CommandParser {
     private final HashMap<String, String> params;
@@ -90,7 +91,7 @@ public class CommandParser {
         } catch (TypeException e) {
             return new InvalidCommand(e.toString());
         } catch (NumberFormatException e) {
-            return new InvalidCommand(Messages.MESSAGE_NUMBER_FORMAT_ERROR);
+            return new InvalidCommand(Messages.MESSAGE_INVALID_FOOD_AMOUNT);
         }
     }
 
@@ -153,7 +154,7 @@ public class CommandParser {
             params.put("index", index);
             return new DeleteCommand(recordType, params);
         } catch (NumberFormatException e) {
-            return new InvalidCommand("The index should be an integer");
+            return new InvalidCommand(MESSAGE_INDEX_NUMBER_FORMAT_EXCEPTION);
         }
     }
 

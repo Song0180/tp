@@ -22,7 +22,7 @@ public class DeleteCommand extends Command {
     public CommandResult execute(FitCenter fitCenter) {
         try {
             String recordSummary = fitCenter.removeRecordFromList(recordType, indexToDelete);
-            feedback = String.format(FEEDBACK_FORMAT, recordType, indexToDelete, recordSummary);
+            feedback = String.format(FEEDBACK_FORMAT, recordType, (indexToDelete + 1), recordSummary);
             feedback += "\n" + fitCenter.getRecordListString(recordType);
             return new CommandResult(feedback);
         } catch (IndexOutOfBoundsException e) {

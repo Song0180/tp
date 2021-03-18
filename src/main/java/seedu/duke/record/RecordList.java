@@ -52,7 +52,7 @@ public class RecordList {
             StringBuilder recordStringBuilder = new StringBuilder();
             int i = 0;
             for (Record record : records) {
-                recordStringBuilder.append(i).append(record.getRecordData()).append("\n");
+                recordStringBuilder.append((i + 1)).append(record.getRecordData()).append("\n");
                 i++;
             }
             return recordStringBuilder.toString();
@@ -73,7 +73,7 @@ public class RecordList {
             int i = 0;
             for (Record record : records) {
                 if (record.getDate().isEqual(date)) {
-                    recordStringBuilder.append(i).append(record.getRecordData()).append("\n");
+                    recordStringBuilder.append((i + 1)).append(record.getRecordData()).append("\n");
                     i++;
                 }
             }
@@ -159,7 +159,7 @@ public class RecordList {
             Diet diet = (Diet) record;
             FoodCategory paramCategory = getFoodCategory(optionalParam);
             if (diet.getDate().isEqual(date) && diet.getFoodCategory().equals(paramCategory)) {
-                recordStringBuilder.append(i).append(record.getRecordData()).append("\n");
+                recordStringBuilder.append((i + 1)).append(record.getRecordData()).append("\n");
                 i++;
             }
         }
@@ -177,7 +177,7 @@ public class RecordList {
             Exercise exercise = (Exercise) record;
             WorkoutCategory paramCategory = getWorkOutCategory(optionalParam);
             if (exercise.getWorkoutCategory().equals(paramCategory)) {
-                recordStringBuilder.append(i).append(record.getRecordData()).append("\n");
+                recordStringBuilder.append((i + 1)).append(record.getRecordData()).append("\n");
                 i++;
             }
         }
@@ -194,7 +194,7 @@ public class RecordList {
             Exercise exercise = (Exercise) record;
             WorkoutCategory paramCategory = getWorkOutCategory(optionalParam);
             if (exercise.getDate().isEqual(date) && exercise.getWorkoutCategory().equals(paramCategory)) {
-                recordStringBuilder.append(i).append(record.getRecordData()).append("\n");
+                recordStringBuilder.append((i + 1)).append(record.getRecordData()).append("\n");
                 i++;
             }
         }

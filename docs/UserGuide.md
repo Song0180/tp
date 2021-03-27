@@ -254,7 +254,7 @@ Format: `set  t/E p/PERIOD_TYPE target/ENERGY`
 * The default unit of energy is in **kcal**. A **float number** is expected for the duration, other formats are **not acceptable**.
 
 Example of usage:  
-`set t/E p/D target/0.5 set a daily exercise goal of burning 0.5kcal energy.`
+`set t/E p/D target/0.5`
 
 Output:
 ```
@@ -266,7 +266,7 @@ Progress: 0kcal
 ```
 
 Example of usage:  
-`set t/E p/W target/10 set a weekly exercise goal of burning 10kcal energy.`
+`set t/E p/W target/10`
 
 Output:
 ```

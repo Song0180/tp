@@ -244,6 +244,100 @@ Index    Date         Diet    Weight
 1        05-01-2020   egg     60 g
 ```
 
+### Set a goal for exercise for a given time period: `set`
+Set one exercise goal with a target energy (in calories) to burn within a given time period.
+
+Format: `set  t/E p/PERIOD_TYPE target/ENERGY`
+ 
+* The tag value should be `E` in the upper case, which specifies that the current record is for **exercise data**.
+* The period type can be `D`, and `W`corresponding to **daily and weekly**. 
+* The default unit of energy is in **kcal**. A **float number** is expected for the duration, other formats are **not acceptable**.
+
+Example of usage:  
+`set t/E p/D target/0.5 set a daily exercise goal of burning 0.5kcal energy.`
+
+Output:
+```
+A new exercise goal is set successfully!
+Goal Type: Daily exercise.
+Target: 0.5kcal.
+Progress: 0kcal.
+```
+
+Example of usage:  
+`set t/E p/W target/10 set a weekly exercise goal of burning 10kcal energy.`
+
+Output:
+```
+A new exercise goal is set successfully!
+Goal Type: Weekly exercise.
+Target: 10kcal.
+Progress: 0kcal.
+```
+
+### Check the progress of goals: `check`
+Check the current progress of goals set by the user.
+
+Format: `check  t/TAG [p/PERIOD_TYPE]`
+ 
+* The tag value should only be `E`, `S`, `D`, `W`. It specifies the kind of goal (exercise, sleep, diet and body weight) to check.
+* The period type can be `D`, and `W`corresponding to **daily and weekly**. It is optional.
+
+Example of usage:  
+`check t/E`
+
+Output:
+```
+Checking the progress of exercise goals:
+Index    Date Added   Goal Type    Target       Progress
+1        15-01-2020   Daily        0.5kcal      Finished
+2        05-01-2020   Weekly       10kcal       8.5kcal
+
+```
+
+Example of usage:  
+`check t/E p/W`
+
+Output:
+```
+Checking the progress of exercise goals:
+Index    Date Added   Goal Type    Target       Progress
+1        05-01-2020   Weekly       10kcal       8.5kcal
+```
+
+### Cancel a goal: `cancel`
+Cancel a goal set by the user.
+
+Format: `cancel  t/TAG p/PERIOD_TYPE i/INDEX`
+ 
+* The tag value should only be `E`, `S`, `D`, `W`. It specifies the kind of goal (exercise, sleep, diet and body weight) to check.
+* * The period type can be `D`, and `W`corresponding to **daily and weekly**. It **must** be specified.
+* The index of the record **must** be specified. 
+* The index must be an `integer` within the range of the total number of records, index out of range or other formats are not acceptable.
+
+Example of usage:  
+`cancel t/E p/D i/1`
+
+Output:
+```
+You have successfully canceled a goal for exercise!
+Goal summary: Daily exercise with target energy 0.5kcal.
+Displaying current exercise goals:
+Index    Date Added   Goal Type    Target       Progress
+1        05-01-2020   Weekly       10kcal       8.5kcal
+```
+
+Example of usage:  
+`cancel t/E p/W i/1`
+
+Output:
+```
+You have successfully canceled a goal for exercise!
+Goal summary: Weekly exercise with target energy 10kcal.
+Displaying current exercise goals:
+No goals are found. Try set a goal with command 'set'.
+```
+
 ## FAQ
 
 **Q**: {What is the format of date?}

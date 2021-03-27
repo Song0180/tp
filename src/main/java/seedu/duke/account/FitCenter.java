@@ -3,6 +3,7 @@ package seedu.duke.account;
 import seedu.duke.command.CommandRecordType;
 import seedu.duke.common.Messages;
 import seedu.duke.goal.ExerciseGoal;
+import seedu.duke.goal.BodyWeightGoal;
 import seedu.duke.goal.GoalList;
 import seedu.duke.record.Record;
 import seedu.duke.record.RecordList;

@@ -50,9 +50,9 @@ public class RecordList {
             return Messages.MESSAGE_NO_RECORD;
         } else {
             StringBuilder recordStringBuilder = new StringBuilder();
-            int i = 0;
+            int i = 1;
             for (Record record : records) {
-                recordStringBuilder.append((i + 1)).append(record.getRecordData()).append("\n");
+                recordStringBuilder.append(i).append(record.getRecordData()).append("\n");
                 i++;
             }
             return recordStringBuilder.toString();
@@ -70,10 +70,10 @@ public class RecordList {
             return Messages.MESSAGE_NO_RECORD;
         } else {
             StringBuilder recordStringBuilder = new StringBuilder();
-            int i = 0;
+            int i = 1;
             for (Record record : records) {
                 if (record.getDate().isEqual(date)) {
-                    recordStringBuilder.append((i + 1)).append(record.getRecordData()).append("\n");
+                    recordStringBuilder.append(i).append(record.getRecordData()).append("\n");
                     i++;
                 }
             }
@@ -137,7 +137,7 @@ public class RecordList {
     }
 
     private String getDietRecordString(String optionalParam, StringBuilder recordStringBuilder) {
-        int i = 0;
+        int i = 1;
         for (Record record : records) {
             Diet diet = (Diet) record;
             FoodCategory paramCategory = getFoodCategory(optionalParam);
@@ -154,12 +154,12 @@ public class RecordList {
     }
 
     private String getDietRecordString(LocalDate date, String optionalParam, StringBuilder recordStringBuilder) {
-        int i = 0;
+        int i = 1;
         for (Record record : records) {
             Diet diet = (Diet) record;
             FoodCategory paramCategory = getFoodCategory(optionalParam);
             if (diet.getDate().isEqual(date) && diet.getFoodCategory().equals(paramCategory)) {
-                recordStringBuilder.append((i + 1)).append(record.getRecordData()).append("\n");
+                recordStringBuilder.append(i).append(record.getRecordData()).append("\n");
                 i++;
             }
         }
@@ -172,12 +172,12 @@ public class RecordList {
 
 
     private String getExerciseRecordString(String optionalParam, StringBuilder recordStringBuilder) {
-        int i = 0;
+        int i = 1;
         for (Record record : records) {
             Exercise exercise = (Exercise) record;
             WorkoutCategory paramCategory = getWorkOutCategory(optionalParam);
             if (exercise.getWorkoutCategory().equals(paramCategory)) {
-                recordStringBuilder.append((i + 1)).append(record.getRecordData()).append("\n");
+                recordStringBuilder.append(i).append(record.getRecordData()).append("\n");
                 i++;
             }
         }
@@ -189,12 +189,12 @@ public class RecordList {
     }
 
     private String getExerciseRecordString(LocalDate date, String optionalParam, StringBuilder recordStringBuilder) {
-        int i = 0;
+        int i = 1;
         for (Record record : records) {
             Exercise exercise = (Exercise) record;
             WorkoutCategory paramCategory = getWorkOutCategory(optionalParam);
             if (exercise.getDate().isEqual(date) && exercise.getWorkoutCategory().equals(paramCategory)) {
-                recordStringBuilder.append((i + 1)).append(record.getRecordData()).append("\n");
+                recordStringBuilder.append(i).append(record.getRecordData()).append("\n");
                 i++;
             }
         }

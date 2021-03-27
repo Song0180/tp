@@ -32,7 +32,7 @@ public enum FoodCategory {
         int i = 1;
         for (FoodCategory foodCategory : FoodCategory.values()) {
             if (!foodCategory.equals(INVALID)) {
-                foodList.append(i).append(". ").append(foodCategory).append("\n");
+                foodList.append(i).append(". ").append(foodCategory.toString().toLowerCase(Locale.ROOT)).append("\n");
                 i++;
             }
         }

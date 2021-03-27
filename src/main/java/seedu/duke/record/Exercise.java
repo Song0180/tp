@@ -4,18 +4,28 @@ import seedu.duke.exception.TypeException;
 
 import java.time.LocalDate;
 
+import static seedu.duke.record.WorkoutCategory.INVALID;
+
 public class Exercise extends Record {
     private double calories;
     private final WorkoutCategory workoutCategory;
     private final int duration;
-
+    private final int SPACE_COUNT;
+    private String seperator = "";
 
     public Exercise(String activityStr, int duration, LocalDate date) throws TypeException {
         super(RecordType.EXERCISE, date);
         try {
             workoutCategory = WorkoutCategory.valueOf(activityStr.toUpperCase());
+            if (workoutCategory == INVALID) {
+                throw new IllegalArgumentException();
+            }
         } catch (IllegalArgumentException e) {
             throw new TypeException("workout type exception");
+        }
+        SPACE_COUNT = 16 - workoutCategory.toString().length();
+        for (int i = 0; i < SPACE_COUNT; i++) {
+            seperator += " ";
         }
         this.duration = duration;
         this.calories = calculateCalories();
@@ -51,7 +61,7 @@ public class Exercise extends Record {
     public String getRecordData() {
         return "\t\t\t" + getDate().format(DATE_FORMATTER)
                 + "\t" + getWorkoutCategory()
-                + "\t\t\t" + getDuration() + " minute(s)"
+                + seperator + getDuration() + " minute(s)"
                 + "\t" + getCalories() + " cal";
     }
 }

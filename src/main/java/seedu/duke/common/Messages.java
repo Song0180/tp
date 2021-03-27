@@ -53,9 +53,14 @@ public class Messages {
             + "the syntax of the command entered is incorrect.\n\n";
     public static final String MESSAGE_SYNTAX_ADD_COMMAND = "The syntax for add command is:\n"
             + "1. Add exercise record\n\tadd t/E a/ACTIVITY_NAME d/DURATION [date/DD-MM-YYYY]\n"
+            + "   The duration is with unit of minute.\n"
             + "2. Add diet record\n\tadd t/D f/FOOD_TYPE w/WEIGHT [date/DD-MM-YYYY]\n"
+            + "   The amount is with unit of gram.\n"
             + "3. Add sleep record\n\tadd t/S d/DURATION [date/DD-MM-YYYY]\n"
-            + "4. Add body weight record\n\tadd t/W w/WEIGHT [date/DD-MM-YYYY]";
+            + "   The duration is with unit of hour.\n"
+            + "4. Add body weight record\n\tadd t/W w/WEIGHT [date/DD-MM-YYYY]"
+            + "   The weight is with unit of kilogram.\n"
+            + "Please note the type must be in uppercase.";
     public static final String MESSAGE_SYNTAX_VIEW_COMMAND = "The syntax for view command is:\n"
             + "1. View exercise records\n\tview t/E [a/ACTIVITY_NAME] [date/DD-MM-YYYY]\n"
             + "2. View diet records\n\tview t/D [f/FOOD_NAME] [date/DD-MM-YYYY]\n"

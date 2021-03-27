@@ -35,11 +35,11 @@ public class ViewCommand extends Command {
     public CommandResult execute(FitCenter fitCenter) {
         switch (recordType) {
         case SLEEP:
-            feedback = getRecordsWithoutOptionalParam(fitCenter);
+            feedback = recordDate == null ? getRecordsWithoutOptionalParam(fitCenter) : getRecordsWithDate(fitCenter);
             feedback = getFeedbackWithHeader(Messages.MESSAGE_VIEW_HEADER_SLEEP);
             break;
         case BODY_WEIGHT:
-            feedback = getRecordsWithoutOptionalParam(fitCenter);
+            feedback = recordDate == null ? getRecordsWithoutOptionalParam(fitCenter) : getRecordsWithDate(fitCenter);
             feedback = getFeedbackWithHeader(Messages.MESSAGE_VIEW_HEADER_WEIGHT);
             break;
         case EXERCISE:
@@ -66,21 +66,21 @@ public class ViewCommand extends Command {
     }
 
     private String getRecordsWithOptionalParam(FitCenter fitCenter, String optionalParam) {
-        if (specifiedParams.size() == 2) {
+        if (recordDate != null && optionalParam != null) {
             return fitCenter.getRecordListString(recordType, recordDate, optionalParam);
-        } else if (specifiedParams.size() == 1 && specifiedParams.containsKey("date")) {
-            return fitCenter.getRecordListString(recordType, recordDate);
-        } else {
+        } else if (recordDate == null) {
             return fitCenter.getRecordListString(recordType, optionalParam);
+        } else {
+            return fitCenter.getRecordListString(recordType, recordDate);
         }
     }
 
     private String getRecordsWithoutOptionalParam(FitCenter fitCenter) {
-        if (specifiedParams != null) {
-            return fitCenter.getRecordListString(recordType, recordDate);
-        } else {
-            return fitCenter.getRecordListString(recordType);
-        }
+        return fitCenter.getRecordListString(recordType);
+    }
+
+    private String getRecordsWithDate(FitCenter fitCenter) {
+        return fitCenter.getRecordListString(recordType, recordDate);
     }
 
     private void addTitleToFeedback() {

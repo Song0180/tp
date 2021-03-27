@@ -23,7 +23,7 @@ public enum CommandRecordType {
      */
     public static CommandRecordType getType(String typeString) {
         for (int i = 0; i < CommandRecordType.values().length; i++) {
-            if (typeString.toUpperCase(Locale.ROOT).equals(CommandRecordType.values()[i].recordType)) {
+            if (typeString.equals(CommandRecordType.values()[i].recordType)) {
                 return CommandRecordType.values()[i];
             }
         }

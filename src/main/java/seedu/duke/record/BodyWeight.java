@@ -34,4 +34,9 @@ public class BodyWeight extends Record {
         return "\t\t\t" + getDate().format(DATE_FORMATTER)
                 + "\t\t" + getWeight() + " Kg";
     }
+
+    @Override
+    public String getRecordDataToStore() {
+        return "W"  + SEPERATOR + weight + SEPERATOR + getDate().format(DATE_FORMATTER);
+    }
 }

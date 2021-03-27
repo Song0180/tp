@@ -224,4 +224,12 @@ public class RecordList {
         }
         return paramCategory;
     }
+
+    public String getRecordToStore() {
+        StringBuilder recordStringBuilder = new StringBuilder();
+        for (Record record : records) {
+            recordStringBuilder.append(record.getRecordDataToStore()).append("\n");
+        }
+        return recordStringBuilder.toString();
+    }
 }

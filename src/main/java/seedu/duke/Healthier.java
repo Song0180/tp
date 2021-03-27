@@ -6,19 +6,32 @@ import seedu.duke.command.Command;
 import seedu.duke.command.CommandResult;
 import seedu.duke.command.ExitCommand;
 import seedu.duke.commandparser.CommandParser;
+import seedu.duke.storage.Storage;
 import seedu.duke.ui.UI;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Healthier {
     private UI ui;
+    private Storage storage;
     private final User currentUser = new User();
     private final FitCenter currentFitCenter = currentUser.getFitCenter();
 
     private void start() {
         ui = new UI();
+        String sourceFilePath = "data" + File.separator + "records.txt";
+        try {
+            storage = new Storage(sourceFilePath);
+            // = storage.getTaskList();
+        } catch (IOException e) {
+            ui.showFileErrorMessage();
+            System.exit(0);
+        }
         ui.printGreetings();
     }
 
-    private void loopCommand() {
+    private void loopCommand() throws IOException {
         CommandParser commandParser = new CommandParser();
         Command command;
         do {
@@ -26,6 +39,7 @@ public class Healthier {
             command = commandParser.parseCommand(userInput);
             CommandResult result = command.execute(currentFitCenter);
             ui.printCommandResult(result);
+            storage.store(currentFitCenter);
             commandParser.clearParserParams();
         } while (!ExitCommand.isExitCommand(command));
     }
@@ -36,9 +50,13 @@ public class Healthier {
     }
 
     public void run() {
-        start();
-        loopCommand();
-        exit();
+        try {
+            start();
+            loopCommand();
+            exit();
+        } catch (IOException e) {
+            ui.showFileErrorMessage();
+        }
     }
 
     public static void main(String[] args) {

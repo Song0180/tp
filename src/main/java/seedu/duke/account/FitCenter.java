@@ -98,4 +98,13 @@ public class FitCenter {
         }
         return Messages.MESSAGE_CANT_VIEW_LIST;
     }
+
+    public String getRecordListForStore() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(exerciseRecordList.getRecordToStore());
+        stringBuilder.append(dietRecordList.getRecordToStore());
+        stringBuilder.append(sleepRecordList.getRecordToStore());
+        stringBuilder.append(bodyRecordList.getRecordToStore());
+        return stringBuilder.toString();
+    }
 }

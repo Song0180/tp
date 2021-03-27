@@ -88,4 +88,9 @@ public class Diet extends Record {
                 + seperator + getAmount() + " g"
                 + "\t\t" + getCalorie() + " cal";
     }
+
+    @Override
+    public String getRecordDataToStore() {
+        return "D" + SEPERATOR + foodCategory + SEPERATOR + amount + SEPERATOR + getDate().format(DATE_FORMATTER);
+    }
 }

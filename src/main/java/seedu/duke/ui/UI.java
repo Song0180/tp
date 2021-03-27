@@ -38,4 +38,8 @@ public class UI {
                 + "\n"
                 + DIVIDER_LINE_ONLY);
     }
+
+    public void showFileErrorMessage() {
+        System.out.println("The source file can't be accessed, please check your access settings.");
+    }
 }

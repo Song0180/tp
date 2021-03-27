@@ -64,4 +64,9 @@ public class Exercise extends Record {
                 + seperator + getDuration() + " minute(s)"
                 + "\t" + getCalories() + " cal";
     }
+
+    @Override
+    public String getRecordDataToStore() {
+        return "E" + SEPERATOR + workoutCategory + SEPERATOR + duration + SEPERATOR + getDate().format(DATE_FORMATTER);
+    }
 }

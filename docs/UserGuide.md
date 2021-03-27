@@ -259,9 +259,10 @@ Example of usage:
 Output:
 ```
 A new exercise goal is set successfully!
-Goal Type: Daily exercise.
-Target: 0.5kcal.
-Progress: 0kcal.
+Date Set: 27-03-2021
+Goal Type: Daily exercise
+Target: 0.5kcal
+Progress: 0kcal
 ```
 
 Example of usage:  
@@ -270,6 +271,7 @@ Example of usage:
 Output:
 ```
 A new exercise goal is set successfully!
+Date Set: 27-03-2021
 Goal Type: Weekly exercise.
 Target: 10kcal.
 Progress: 0kcal.
@@ -289,7 +291,7 @@ Example of usage:
 Output:
 ```
 Checking the progress of exercise goals:
-Index    Date Added   Goal Type    Target       Progress
+Index    Date Set     Goal Type    Target       Progress
 1        15-01-2020   Daily        0.5kcal      Finished
 2        05-01-2020   Weekly       10kcal       8.5kcal
 
@@ -301,7 +303,7 @@ Example of usage:
 Output:
 ```
 Checking the progress of exercise goals:
-Index    Date Added   Goal Type    Target       Progress
+Index    Date Set     Goal Type    Target       Progress
 1        05-01-2020   Weekly       10kcal       8.5kcal
 ```
 
@@ -323,7 +325,7 @@ Output:
 You have successfully canceled a goal for exercise!
 Goal summary: Daily exercise with target energy 0.5kcal.
 Displaying current exercise goals:
-Index    Date Added   Goal Type    Target       Progress
+Index    Date Set     Goal Type    Target       Progress
 1        05-01-2020   Weekly       10kcal       8.5kcal
 ```
 

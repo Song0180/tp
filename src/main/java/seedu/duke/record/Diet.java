@@ -14,7 +14,7 @@ public class Diet extends Record {
     private final double amount;
     private final String formattedDate;
     private static final String SUMMARY_FORMAT = "%sg %s on %s";
-    private final int SPACE_COUNT;
+    private int spaceCount;
     private String seperator = "";
 
     /**
@@ -28,8 +28,8 @@ public class Diet extends Record {
         if (foodCategory == INVALID) {
             throw new TypeException("food type exception");
         }
-        SPACE_COUNT = 20 - foodCategory.toString().length();
-        for (int i = 0; i < SPACE_COUNT; i++) {
+        spaceCount = 20 - foodCategory.toString().length();
+        for (int i = 0; i < spaceCount; i++) {
             seperator += " ";
         }
         amount = Double.parseDouble(amountString);

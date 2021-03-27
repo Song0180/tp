@@ -10,7 +10,7 @@ public class Exercise extends Record {
     private double calories;
     private final WorkoutCategory workoutCategory;
     private final int duration;
-    private final int SPACE_COUNT;
+    private int spaceCount;
     private String seperator = "";
 
     public Exercise(String activityStr, int duration, LocalDate date) throws TypeException {
@@ -23,8 +23,8 @@ public class Exercise extends Record {
         } catch (IllegalArgumentException e) {
             throw new TypeException("workout type exception");
         }
-        SPACE_COUNT = 16 - workoutCategory.toString().length();
-        for (int i = 0; i < SPACE_COUNT; i++) {
+        spaceCount = 16 - workoutCategory.toString().length();
+        for (int i = 0; i < spaceCount; i++) {
             seperator += " ";
         }
         this.duration = duration;

@@ -58,7 +58,7 @@ public class Messages {
             + "   The amount is with unit of gram.\n"
             + "3. Add sleep record\n\tadd t/S d/DURATION [date/DD-MM-YYYY]\n"
             + "   The duration is with unit of hour.\n"
-            + "4. Add body weight record\n\tadd t/W w/WEIGHT [date/DD-MM-YYYY]"
+            + "4. Add body weight record\n\tadd t/W w/WEIGHT [date/DD-MM-YYYY]\n"
             + "   The weight is with unit of kilogram.\n"
             + "Please note the type must be in uppercase.";
     public static final String MESSAGE_SYNTAX_VIEW_COMMAND = "The syntax for view command is:\n"

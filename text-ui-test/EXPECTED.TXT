@@ -3,8 +3,87 @@ Welcome to your personal fitness app - Healthier
 What's in your mind today?
 --------------------------------------------------------------------
 --------------------------------------------------------------------
-Sorry, the command you entered cannot be recognized.
+A new EXERCISE record is added successfully!
+Record summary:
+50 minutes of SWIMMING exercise on 27-03-2021
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+Sorry, the syntax of the command entered is incorrect.
 
-Not sure how to use this app?
-Use command 'help' to see what you can do.
+The syntax for add command is:
+1. Add exercise record
+	add t/E a/ACTIVITY_NAME d/DURATION [date/DD-MM-YYYY]
+2. Add diet record
+	add t/D f/FOOD_TYPE w/WEIGHT [date/DD-MM-YYYY]
+3. Add sleep record
+	add t/S d/DURATION [date/DD-MM-YYYY]
+4. Add body weight record
+	add t/W w/WEIGHT [date/DD-MM-YYYY]
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+A new EXERCISE record is added successfully!
+Record summary:
+40 minutes of DANCE exercise on 27-03-2021
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+A new DIET record is added successfully!
+Record summary:
+500.0g fruit on 20-03-2021
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+A new SLEEP record is added successfully!
+Record summary:
+5 hours of sleep on 27-03-2021
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+The date format is incorrect or the date is invalid. Please try again.
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+A new BODYWEIGHT record is added successfully!
+Record summary:
+Body weight 60.0Kg on 19-03-2021
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+Sorry, the syntax of the command entered is incorrect.
+
+The syntax for view command is:
+1. View exercise records
+	view t/E [a/ACTIVITY_NAME] [date/DD-MM-YYYY]
+2. View diet records
+	view t/D [f/FOOD_NAME] [date/DD-MM-YYYY]
+3. View sleep records
+	view t/S [date/DD-MM-YYYY]
+4. View body weight records
+	view t/W [date/DD-MM-YYYY]
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+Displaying all eligible body weight records:
+Index		Date			Body Weight
+1			19-03-2021		60.0 Kg
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+Displaying all eligible exercise records:
+Index		Date		Activity		Duration		Calories
+1			27-03-2021	SWIMMING			50 minute(s)	500.0 cal
+2			27-03-2021	DANCE			40 minute(s)	400.0 cal
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+Displaying all eligible exercise records:
+Index		Date		Activity		Duration		Calories
+1			27-03-2021	DANCE			40 minute(s)	400.0 cal
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+The index field is not a valid number.
+Please try again.
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+You have successfully deleted the EXERCISE record of index 1!
+Record summary: 50 minutes of SWIMMING exercise on 27-03-2021
+Displaying current exercise records:
+1			27-03-2021	DANCE			40 minute(s)	400.0 cal
+
 --------------------------------------------------------------------

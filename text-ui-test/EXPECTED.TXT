@@ -13,12 +13,17 @@ Sorry, the syntax of the command entered is incorrect.
 The syntax for add command is:
 1. Add exercise record
 	add t/E a/ACTIVITY_NAME d/DURATION [date/DD-MM-YYYY]
+   The duration is with unit of minute.
 2. Add diet record
 	add t/D f/FOOD_TYPE w/WEIGHT [date/DD-MM-YYYY]
+   The amount is with unit of gram.
 3. Add sleep record
 	add t/S d/DURATION [date/DD-MM-YYYY]
+   The duration is with unit of hour.
 4. Add body weight record
 	add t/W w/WEIGHT [date/DD-MM-YYYY]
+   The weight is with unit of kilogram.
+Please note the type must be in uppercase.
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 A new EXERCISE record is added successfully!
@@ -66,27 +71,27 @@ Index		Date			Body Weight
 --------------------------------------------------------------------
 Displaying all eligible exercise records:
 Index		Date		Activity		Duration		Calories
-1			25-03-2021	SWIMMING			50 minute(s)	500.0 cal
-2			25-03-2021	DANCE			40 minute(s)	400.0 cal
+1			25-03-2021	SWIMMING        50 minute(s)	500.0 cal
+2			25-03-2021	DANCE           40 minute(s)	400.0 cal
 
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 Displaying all eligible exercise records:
 Index		Date		Activity		Duration		Calories
-1			25-03-2021	DANCE			40 minute(s)	400.0 cal
+1			25-03-2021	DANCE           40 minute(s)	400.0 cal
 
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 Displaying all eligible exercise records:
 Index		Date		Activity		Duration		Calories
-1			25-03-2021	DANCE			40 minute(s)	400.0 cal
+1			25-03-2021	DANCE           40 minute(s)	400.0 cal
 
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 Displaying all eligible exercise records:
 Index		Date		Activity		Duration		Calories
-1			25-03-2021	SWIMMING			50 minute(s)	500.0 cal
-2			25-03-2021	DANCE			40 minute(s)	400.0 cal
+1			25-03-2021	SWIMMING        50 minute(s)	500.0 cal
+2			25-03-2021	DANCE           40 minute(s)	400.0 cal
 
 --------------------------------------------------------------------
 --------------------------------------------------------------------
@@ -97,6 +102,6 @@ Please try again.
 You have successfully deleted the EXERCISE record of index 1!
 Record summary: 50 minutes of SWIMMING exercise on 25-03-2021
 Displaying current exercise records:
-1			25-03-2021	DANCE			40 minute(s)	400.0 cal
+1			25-03-2021	DANCE           40 minute(s)	400.0 cal
 
 --------------------------------------------------------------------

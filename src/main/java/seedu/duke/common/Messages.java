@@ -24,6 +24,8 @@ public class Messages {
     public static final String MESSAGE_VIEW_HEADER_WEIGHT = "Index\t\tDate\t\t\tBody Weight\n";
     public static final String MESSAGE_NO_RECORD = "Sorry, no records found.\n"
             + "You can try adding records by using command 'add'.";
+    public static final String MESSAGE_NO_GOAL = "Sorry, no goals found.\n"
+            + "You can try setting a goal by using command 'set'.";
     public static final String MESSAGE_INDEX_NUMBER_FORMAT_EXCEPTION = "The index field is not a valid number.\n"
             + "Please try again.";
     public static final String MESSAGE_CANT_ADD_RECORD = "Sorry, you cannot add record of an unrecognized type.";

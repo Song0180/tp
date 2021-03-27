@@ -2,6 +2,8 @@ package seedu.duke.account;
 
 import seedu.duke.command.CommandRecordType;
 import seedu.duke.common.Messages;
+import seedu.duke.goal.ExerciseGoal;
+import seedu.duke.goal.GoalList;
 import seedu.duke.record.Record;
 import seedu.duke.record.RecordList;
 import seedu.duke.record.RecordType;
@@ -17,7 +19,7 @@ public class FitCenter {
     private final RecordList exerciseRecordList = new RecordList(RecordType.EXERCISE);
     private final RecordList dietRecordList = new RecordList(RecordType.DIET);
     private final RecordList bodyRecordList = new RecordList(RecordType.BODYWEIGHT);
-
+    private final GoalList exerciseGoalList = new GoalList(RecordType.EXERCISE);
 
     private RecordList getRecordListByType(CommandRecordType type) {
         switch (type) {
@@ -46,7 +48,7 @@ public class FitCenter {
             list.addRecord(record);
         }
     }
-    
+
     public String removeRecordFromList(CommandRecordType type, int index) throws IndexOutOfBoundsException {
         RecordList list = getRecordListByType(type);
         if (list != null) {

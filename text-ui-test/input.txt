@@ -1,7 +1,7 @@
-add t/E a/swimming d/50
+add t/E a/swimming d/50 date/25-03-2021
 add t/E a/dance
-add t/E a/dance d/40
-add t/D f/fruit w/500 date/20-03-2021
+add t/E a/dance d/40 date/25-03-2021
+add t/D f/fruit w/500
 add t/S d/5
 add t/W w/60 date/2021-03-19
 add t/W w/60 date/19-03-2021
@@ -9,5 +9,7 @@ view
 view t/W
 view t/E
 view t/E a/dance
+view t/E a/dance date/25-03-2021
+view t/E date/25-03-2021
 delete t/E i/a
 delete t/E i/1

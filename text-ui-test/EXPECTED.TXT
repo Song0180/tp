@@ -5,7 +5,7 @@ What's in your mind today?
 --------------------------------------------------------------------
 A new EXERCISE record is added successfully!
 Record summary:
-50 minutes of SWIMMING exercise on 27-03-2021
+50 minutes of SWIMMING exercise on 25-03-2021
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 Sorry, the syntax of the command entered is incorrect.
@@ -23,12 +23,12 @@ The syntax for add command is:
 --------------------------------------------------------------------
 A new EXERCISE record is added successfully!
 Record summary:
-40 minutes of DANCE exercise on 27-03-2021
+40 minutes of DANCE exercise on 25-03-2021
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 A new DIET record is added successfully!
 Record summary:
-500.0g fruit on 20-03-2021
+500.0g fruit on 27-03-2021
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 A new SLEEP record is added successfully!
@@ -66,14 +66,27 @@ Index		Date			Body Weight
 --------------------------------------------------------------------
 Displaying all eligible exercise records:
 Index		Date		Activity		Duration		Calories
-1			27-03-2021	SWIMMING			50 minute(s)	500.0 cal
-2			27-03-2021	DANCE			40 minute(s)	400.0 cal
+1			25-03-2021	SWIMMING			50 minute(s)	500.0 cal
+2			25-03-2021	DANCE			40 minute(s)	400.0 cal
 
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 Displaying all eligible exercise records:
 Index		Date		Activity		Duration		Calories
-1			27-03-2021	DANCE			40 minute(s)	400.0 cal
+1			25-03-2021	DANCE			40 minute(s)	400.0 cal
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+Displaying all eligible exercise records:
+Index		Date		Activity		Duration		Calories
+1			25-03-2021	DANCE			40 minute(s)	400.0 cal
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+Displaying all eligible exercise records:
+Index		Date		Activity		Duration		Calories
+1			25-03-2021	SWIMMING			50 minute(s)	500.0 cal
+2			25-03-2021	DANCE			40 minute(s)	400.0 cal
 
 --------------------------------------------------------------------
 --------------------------------------------------------------------
@@ -82,8 +95,8 @@ Please try again.
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 You have successfully deleted the EXERCISE record of index 1!
-Record summary: 50 minutes of SWIMMING exercise on 27-03-2021
+Record summary: 50 minutes of SWIMMING exercise on 25-03-2021
 Displaying current exercise records:
-1			27-03-2021	DANCE			40 minute(s)	400.0 cal
+1			25-03-2021	DANCE			40 minute(s)	400.0 cal
 
 --------------------------------------------------------------------

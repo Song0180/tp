@@ -5,6 +5,7 @@ import seedu.duke.common.Messages;
 import seedu.duke.goal.ExerciseGoal;
 import seedu.duke.goal.BodyWeightGoal;
 import seedu.duke.goal.SleepGoal;
+import seedu.duke.goal.DietGoal;
 import seedu.duke.goal.GoalList;
 import seedu.duke.record.Record;
 import seedu.duke.record.RecordList;
@@ -22,6 +23,7 @@ public class FitCenter {
     private final RecordList dietRecordList = new RecordList(RecordType.DIET);
     private final RecordList bodyRecordList = new RecordList(RecordType.BODYWEIGHT);
     private final GoalList exerciseGoalList = new GoalList(RecordType.EXERCISE);
+    private final GoalList dietGoalList = new GoalList(RecordType.DIET);
 
     private RecordList getRecordListByType(CommandRecordType type) {
         switch (type) {

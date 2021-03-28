@@ -22,6 +22,8 @@ public class FitCenter {
     private final RecordList dietRecordList = new RecordList(RecordType.DIET);
     private final RecordList bodyRecordList = new RecordList(RecordType.BODYWEIGHT);
     private final GoalList exerciseGoalList = new GoalList(RecordType.EXERCISE);
+    private final GoalList bodyWeightGoalList = new GoalList(RecordType.BODYWEIGHT);
+    private final GoalList sleepGoalList = new GoalList(RecordType.SLEEP);
 
     private RecordList getRecordListByType(CommandRecordType type) {
         switch (type) {

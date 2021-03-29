@@ -33,12 +33,12 @@ Record summary:
 --------------------------------------------------------------------
 A new DIET record is added successfully!
 Record summary:
-500.0g fruit on 27-03-2021
+500.0g fruit on 26-03-2021
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 A new SLEEP record is added successfully!
 Record summary:
-5 hours of sleep on 27-03-2021
+5 hours of sleep on 29-03-2021
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 The date format is incorrect or the date is invalid. Please try again.
